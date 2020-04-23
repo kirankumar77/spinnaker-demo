@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* To builds the dockerimage */
         //update your ECR registry URI
-        app = docker.build("demoapps")
+        app = sudo docker.build("demoapps")
     }
 
     stage('Test image') {
