@@ -10,6 +10,7 @@ node {
     stage('Build image') {
         /* To builds the dockerimage */
         //update your ECR registry URI
+        sh chmod 777 /var/run/docker.sock
         app = sudo docker.build("demoapps")
     }
 
