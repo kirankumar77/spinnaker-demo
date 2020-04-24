@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* To builds the dockerimage */
         //update your ECR registry URI
-       app = docker.build("demoapps")
+       app = docker.build("kirankumar77/demoapp")
     }
 
     stage('Test image') {
@@ -25,7 +25,7 @@ node {
         /* Finally, we'll push the image */
         //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
         // update your ECR registry URI and jenkins crendential paramater
-        docker.withRegistry('https://hub.docker.com/kirankumar77/', '9989393331')    {
+        docker.withRegistry(''https://registry.hub.docker.com', 'jenkins-dockerhub')    {
             //app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
